@@ -3,6 +3,11 @@
   "framework": "docusaurus-2",
   "buildCommand": "npm run build",
   "outputDirectory": "build",
+  "build": {
+    "env": {
+      "NODE_VERSION": "18"
+    }
+  },
   "functions": {
     "api/**/*.ts": {
       "runtime": "@vercel/node@3.0.0"
