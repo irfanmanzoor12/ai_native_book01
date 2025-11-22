@@ -1,0 +1,10 @@
+{
+  "label": "Part 2: Markdown, Prompt & Context Engineering",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "part-2-markdown-prompt-context/index"
+  }
+}

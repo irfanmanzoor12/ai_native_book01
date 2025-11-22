@@ -1,0 +1,72 @@
+Prompt :
+Task: Build a Docusaurus-based educational platform with Multi-tenancy, Authentication, and AI-driven content customization.
+
+1. Tech Stack & Architecture
+
+Frontend: Docusaurus (latest version).
+
+Authentication: Better-Auth.com (Must implement SSO and Multi-tenancy/Organization support).
+
+Database: Neon (PostgreSQL).
+
+Backend Strategy: Since Docusaurus is a static site generator, implement the backend logic (Auth endpoints and Database calls) using Vercel Serverless Functions (or a dedicated API directory) to ensure database secrets are not exposed to the client.
+
+State Management: React Context (for user session and proficiency data).
+
+2. Database Schema (PostgreSQL/Neon)
+
+Constraint: All tables must have a tenant_id column to ensure Row Level Security (RLS).
+
+Table Structure:
+
+users: id, tenant_id, email, preferences (Column type: JSONB to store {"ai_proficiency": "...", "programming_proficiency": "..."}), created_at.
+
+books: id, tenant_id, title, description.
+
+chapters: id, tenant_id, book_id, title.
+
+lessons: id, tenant_id, chapter_id, content (Original Text), summary (Text), is_summary_generated (Boolean).
+
+personalized_content: id, tenant_id, lesson_id, user_id, content (Text), is_generated (Boolean).
+
+3. Feature Requirements
+
+Authentication & Navigation:
+
+Top Bar: Add a dynamic "Sign In" / "Log Out" toggle button in the top-right navbar (next to the GitHub icon).
+
+Onboarding Flow: If a user logs in and their preferences column is empty, redirect them to an onboarding page to capture:
+
+Programming Proficiency (Beginner, Intermediate, Expert)
+
+AI Proficiency (Beginner, Intermediate, Expert)
+
+Dynamic Tutorial Interface (Lesson Page):
+
+Create a custom Docusaurus Doc Item component that renders three tabs:
+
+Original: (Default) Shows the standard static lesson content.
+
+Summarize: (Auth Only) Shows a summary of the lesson.
+
+Personalized: (Auth Only) Shows content rewritten based on the user's specific proficiency levels.
+
+Access Control: Unauthenticated users can only see the "Original" tab. Clicking others prompts a login.
+
+Content Generation Logic (No RAG required):
+
+Summarize Tab: When clicked, check lessons.is_summary_generated. If true, fetch from DB. If false, send lesson content to AI, save result to lessons.summary, set flag to true, and display.
+
+Personalized Tab: When clicked, check personalized_content table for a record matching user_id + lesson_id. If found, display it. If not, send lesson content + user proficiency JSON to AI, save result to DB, and display.
+
+4. Deliverables
+
+Setup the project structure.
+
+Provide the SQL schema for Neon.
+
+Provide the code for the Custom Doc Item component (React).
+
+Provide the API handler code for the AI/DB interactions.
+
+

@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 1: The AI Development Revolution",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "part-1-introducing-ai-driven-development/chapter-1-ai-development-revolution/index"
+  }
+}

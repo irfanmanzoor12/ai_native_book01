@@ -1,0 +1,10 @@
+{
+  "label": "Part 1: Introducing AI-Driven Development",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "part-1-introducing-ai-driven-development/index"
+  }
+}

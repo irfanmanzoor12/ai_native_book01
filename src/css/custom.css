@@ -1,0 +1,138 @@
+/**
+ * AI-Native Learning Platform - Custom CSS
+ * Bundles Infima by default with custom theming.
+ */
+
+/* Primary color palette - Purple/Indigo theme */
+:root {
+  --ifm-color-primary: #667eea;
+  --ifm-color-primary-dark: #5268e4;
+  --ifm-color-primary-darker: #4860e1;
+  --ifm-color-primary-darkest: #2a45d5;
+  --ifm-color-primary-light: #7a94f0;
+  --ifm-color-primary-lighter: #849cf2;
+  --ifm-color-primary-lightest: #a7b8f7;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(102, 126, 234, 0.1);
+
+  /* Custom variables */
+  --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --ai-gradient-light: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+}
+
+/* Dark mode palette */
+[data-theme='dark'] {
+  --ifm-color-primary: #7a94f0;
+  --ifm-color-primary-dark: #5b78eb;
+  --ifm-color-primary-darker: #4b6be9;
+  --ifm-color-primary-darkest: #2246e0;
+  --ifm-color-primary-light: #99b0f5;
+  --ifm-color-primary-lighter: #a8bcf7;
+  --ifm-color-primary-lightest: #d0dafc;
+  --docusaurus-highlighted-code-line-bg: rgba(122, 148, 240, 0.2);
+}
+
+/* Navbar styling */
+.navbar {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+/* Hero section styling (for landing page) */
+.hero {
+  background: var(--ai-gradient);
+  color: white;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* Button styling */
+.button--primary {
+  background: var(--ai-gradient);
+  border: none;
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, #5268e4 0%, #653d8b 100%);
+}
+
+/* Doc page improvements */
+.theme-doc-markdown {
+  max-width: 800px;
+}
+
+/* Code block styling */
+.prism-code {
+  border-radius: 8px;
+}
+
+/* Table styling */
+table {
+  display: table;
+  width: 100%;
+}
+
+th {
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* Alert/Admonition styling */
+.alert {
+  border-radius: 8px;
+}
+
+/* Footer styling */
+.footer {
+  background: #1a1a2e;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #1a1a2e;
+}
+
+/* Smooth transitions */
+a,
+button {
+  transition: all 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-color-emphasis-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-500);
+}
+
+/* Mobile improvements */
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
